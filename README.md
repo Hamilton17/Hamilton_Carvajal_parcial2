@@ -99,8 +99,8 @@ Crea un nuevo usuario
 ### 1. Clonar el repositorio
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
-cd DOCKER
+git clone https://github.com/Hamilton17/Hamilton_Carvajal_parcial2.git
+cd Hamilton_Carvajal_parcial2
 ```
 
 ### 2. Construir la imagen Docker (opcional)
