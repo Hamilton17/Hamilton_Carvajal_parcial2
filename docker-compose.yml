@@ -1,9 +1,6 @@
-version: '3.8'
-
 services:
-  # Servicio de PHP con Apache
   php-app:
-    image: kirytosao/parcial2:2.0
+    image: kirytosao/parcial2:3.0
     container_name: parcial-php-app
     ports:
       - "8080:80"
@@ -13,12 +10,12 @@ services:
       DB_USER: root
       DB_PASSWORD: rootpassword
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
     networks:
       - parcial-network
     restart: unless-stopped
 
-  # Servicio de MySQL
   mysql:
     image: mysql:8.0
     container_name: parcial-mysql
@@ -35,16 +32,14 @@ services:
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpassword"]
-      interval: 10s
+      interval: 5s
       timeout: 5s
-      retries: 5
+      retries: 10
 
-# Volumen para persistencia de datos de MySQL
 volumes:
   mysql-data:
     driver: local
 
-# Red para comunicación entre contenedores
 networks:
   parcial-network:
     driver: bridge
