@@ -24,3 +24,7 @@ desktop.ini
 # Volúmenes de Docker (si se crean localmente)
 data/
 mysql-data/
+
+# Imágenes subidas por usuarios
+src/uploads/*
+!src/uploads/.gitkeep

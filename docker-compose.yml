@@ -3,7 +3,7 @@ version: '3.8'
 services:
   # Servicio de PHP con Apache
   php-app:
-    image: kirytosao/parcial2:1.0
+    image: kirytosao/parcial2:2.0
     container_name: parcial-php-app
     ports:
       - "8080:80"
