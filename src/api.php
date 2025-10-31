@@ -70,7 +70,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 // Enrutamiento simple
-if ($uri === '/' || $uri === '/index.php') {
+if ($uri === '/' || $uri === '/api.php') {
     header('Content-Type: application/json');
     echo json_encode([
         'message' => 'API de Usuarios - Parcial Práctico Docker',
@@ -85,7 +85,7 @@ if ($uri === '/' || $uri === '/index.php') {
 }
 
 // Manejo de rutas de usuarios
-if ($uri === '/users' || $uri === '/index.php/users' || preg_match('#^/index\.php/users/(\d+)$#', $uri, $matches) || preg_match('#^/users/(\d+)$#', $uri, $matches)) {
+if ($uri === '/users' || $uri === '/api.php/users' || preg_match('#^/api\.php/users/(\d+)$#', $uri, $matches) || preg_match('#^/users/(\d+)$#', $uri, $matches)) {
     $pdo = getDBConnection();
     $userId = isset($matches[1]) ? (int)$matches[1] : null;
 
