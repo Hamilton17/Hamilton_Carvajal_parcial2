@@ -393,7 +393,7 @@
             try {
                 usersList.innerHTML = '<div class="loading">Cargando usuarios...</div>';
 
-                const response = await fetch('/index.php/users');
+                const response = await fetch('/api.php/users');
                 const data = await response.json();
 
                 if (data.success) {
@@ -443,7 +443,7 @@
             try {
                 messageDiv.innerHTML = '<div class="loading">Creando usuario...</div>';
 
-                const response = await fetch('/index.php/users', {
+                const response = await fetch('/api.php/users', {
                     method: 'POST',
                     body: formData
                 });
@@ -492,7 +492,7 @@
             try {
                 messageDiv.innerHTML = '<div class="loading">Actualizando usuario...</div>';
 
-                const response = await fetch(`/index.php/users/${userId}`, {
+                const response = await fetch(`/api.php/users/${userId}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
@@ -524,7 +524,7 @@
             }
 
             try {
-                const response = await fetch(`/index.php/users/${id}`, {
+                const response = await fetch(`/api.php/users/${id}`, {
                     method: 'DELETE'
                 });
 

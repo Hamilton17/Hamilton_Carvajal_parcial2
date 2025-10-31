@@ -22,7 +22,7 @@ RUN echo '<Directory /var/www/html/>\n\
     Options Indexes FollowSymLinks\n\
     AllowOverride All\n\
     Require all granted\n\
-    DirectoryIndex index.php index.html\n\
+    DirectoryIndex index.html api.php\n\
 </Directory>\n\
 <FilesMatch \.php$>\n\
     SetHandler application/x-httpd-php\n\
